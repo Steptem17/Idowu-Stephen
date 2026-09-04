@@ -1,6 +1,10 @@
 <div align="center">
 
-  <img src="./public/idowu-logo-dark.png" alt="Stephen Idowu Logo" width="80" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="public/brand/idowu-logo-light.png">
+    <source media="(prefers-color-scheme: light)" srcset="public/brand/idowu-logo-dark.png">
+    <img src="public/brand/idowu-logo-dark.png" alt="Stephen Idowu Logo" width="85" />
+  </picture>
 
   # Stephen Idowu
   **Frontend Engineer & Web Developer**
@@ -9,13 +13,13 @@
 
   <br />
 
-  [![React](https://img.shields.io/badge/React-19.x-20232A?style=flat-square&logo=react&logoColor=61DAFB)](https://react.dev/)
-  [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-20232A?style=flat-square&logo=typescript&logoColor=3178C6)](https://www.typescriptlang.org/)
-  [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-20232A?style=flat-square&logo=tailwind-css&logoColor=38B2AC)](https://tailwindcss.com/)
-  [![Vite](https://img.shields.io/badge/Vite-8.x-20232A?style=flat-square&logo=vite&logoColor=646CFF)](https://vitejs.dev/)
-  [![Status](https://img.shields.io/badge/Production-Active-success?style=flat-square)](https://stephenidowu.dev)
-
-  <br />
+  <p align="center">
+    <a href="https://react.dev/"><img src="https://img.shields.io/badge/React_19-%2320232a.svg?style=flat&logo=react&logoColor=%2361DAFB" alt="React 19" /></a>
+    <a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/TypeScript-%23007ACC.svg?style=flat&logo=typescript&logoColor=white" alt="TypeScript" /></a>
+    <a href="https://tailwindcss.com/"><img src="https://img.shields.io/badge/Tailwind_CSS-%2306B6D4.svg?style=flat&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" /></a>
+    <a href="https://vitejs.dev/"><img src="https://img.shields.io/badge/Vite-%23646CFF.svg?style=flat&logo=vite&logoColor=white" alt="Vite" /></a>
+    <a href="https://stephenidowu.dev"><img src="https://img.shields.io/badge/Status-Live_Production-10B981.svg?style=flat&logo=vercel&logoColor=white" alt="Production Status" /></a>
+  </p>
 
   [Live Portfolio](https://stephenidowu.dev) &bull; [Featured Projects](#featured-projects) &bull; [Tech Stack](#core-technologies) &bull; [Contact](#contact)
 
@@ -68,12 +72,15 @@ Key engineering highlights:
 ```text
 my-portfolio/
 ├── public/
-│   ├── idowu-logo-dark.png        # Dark theme brand asset
-│   ├── idowu-logo-light.png       # Light theme brand asset
-│   ├── favicon.ico                # Web favicon
-│   ├── favicon-32x32.png          # High-resolution browser icon
-│   ├── apple-touch-icon.png       # iOS touch icon
-│   └── projects/                  # Client project imagery & previews
+│   ├── brand/
+│   │   ├── idowu-logo-dark.png    # Dark theme brand asset
+│   │   └── idowu-logo-light.png   # Light theme brand asset
+│   ├── icons/
+│   │   ├── favicon.ico            # Web favicon
+│   │   ├── favicon-32x32.png      # High-resolution browser icon
+│   │   └── apple-touch-icon.png   # iOS touch icon
+│   ├── projects/                  # Client project imagery & previews
+│   └── CV.pdf                     # Curriculum Vitae
 ├── src/
 │   ├── components/
 │   │   ├── common/                # Reusable UI primitives (Button, Logo, Canvas)
