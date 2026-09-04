@@ -1,29 +1,9 @@
-<div align="center">
+# Stephen Idowu
 
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="public/brand/idowu-logo-light.png">
-    <source media="(prefers-color-scheme: light)" srcset="public/brand/idowu-logo-dark.png">
-    <img src="public/brand/idowu-logo-dark.png" alt="Stephen Idowu Logo" width="85" />
-  </picture>
+**Frontend Engineer & Web Developer**  
+*Building high-performance web applications, responsive interfaces, and scalable digital experiences.*
 
-  # Stephen Idowu
-  **Frontend Engineer & Web Developer**
-
-  *Building high-performance web applications, responsive interfaces, and scalable digital experiences.*
-
-  <br />
-
-  <p align="center">
-    <a href="https://react.dev/"><img src="https://img.shields.io/badge/React_19-%2320232a.svg?style=flat&logo=react&logoColor=%2361DAFB" alt="React 19" /></a>
-    <a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/TypeScript-%23007ACC.svg?style=flat&logo=typescript&logoColor=white" alt="TypeScript" /></a>
-    <a href="https://tailwindcss.com/"><img src="https://img.shields.io/badge/Tailwind_CSS-%2306B6D4.svg?style=flat&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" /></a>
-    <a href="https://vitejs.dev/"><img src="https://img.shields.io/badge/Vite-%23646CFF.svg?style=flat&logo=vite&logoColor=white" alt="Vite" /></a>
-    <a href="https://stephenidowu.dev"><img src="https://img.shields.io/badge/Status-Live_Production-10B981.svg?style=flat&logo=vercel&logoColor=white" alt="Production Status" /></a>
-  </p>
-
-  [Live Portfolio](https://stephenidowu.dev) &bull; [Featured Projects](#featured-projects) &bull; [Tech Stack](#core-technologies) &bull; [Contact](#contact)
-
-</div>
+[Live Portfolio](https://stephenidowu.dev) &bull; [Featured Projects](#featured-projects) &bull; [Core Technologies](#core-technologies) &bull; [Contact](#contact)
 
 ---
 
