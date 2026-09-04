@@ -1,132 +1,157 @@
 <div align="center">
 
-  <img src="./public/idowu-logo-dark.png" alt="Stephen Idowu Logo" width="90" />
+  <img src="./public/idowu-logo-dark.png" alt="Stephen Idowu Logo" width="80" />
 
-  # Stephen Idowu &mdash; Web Developer
-  ### High-Performance Web Applications & Modern Digital Experiences
+  # Stephen Idowu
+  **Frontend Engineer & Web Developer**
 
-  [![React](https://img.shields.io/badge/React-19.x-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
-  [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-  [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-  [![Vite](https://img.shields.io/badge/Vite-8.x-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
-  [![Lenis](https://img.shields.io/badge/Lenis-Smooth_Scroll-black?style=for-the-badge)](https://lenis.darkroom.engineering/)
+  *Building high-performance web applications, responsive interfaces, and scalable digital experiences.*
 
-  <p align="center">
-    Official portfolio website of <b>Stephen Idowu</b>, featuring selected client work, production web applications, case studies, and engineering capabilities.
-  </p>
+  <br />
+
+  [![React](https://img.shields.io/badge/React-19.x-20232A?style=flat-square&logo=react&logoColor=61DAFB)](https://react.dev/)
+  [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-20232A?style=flat-square&logo=typescript&logoColor=3178C6)](https://www.typescriptlang.org/)
+  [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-20232A?style=flat-square&logo=tailwind-css&logoColor=38B2AC)](https://tailwindcss.com/)
+  [![Vite](https://img.shields.io/badge/Vite-8.x-20232A?style=flat-square&logo=vite&logoColor=646CFF)](https://vitejs.dev/)
+  [![Status](https://img.shields.io/badge/Production-Active-success?style=flat-square)](https://stephenidowu.dev)
+
+  <br />
+
+  [Live Portfolio](https://stephenidowu.dev) &bull; [Featured Projects](#featured-projects) &bull; [Tech Stack](#core-technologies) &bull; [Contact](#contact)
 
 </div>
 
 ---
 
-## 🔍 Google Search Engine Snippet Preview (SERP)
+## Overview
 
-When users and recruiters search for **Stephen Idowu Web Developer** or related keywords on Google, the site structured data (JSON-LD) produces the following rich snippet:
+This repository contains the source code for the personal portfolio of **Stephen Idowu**. The platform showcases production-grade client applications, engineering case studies, interactive UI components, and technical capabilities across modern web stacks.
 
-```text
-idowu.dev
-https://stephenidowu.dev
-Stephen Idowu | Web Developer & Frontend Specialist
-Stephen Idowu is a Web Developer crafting high-performance, responsive web applications
-with React, TypeScript, and modern UI architectures. Explore selected client projects.
-★★★★★ Rating for stephenidowu.dev: 5.0 - 18 client reviews
-
-About Stephen Idowu                     Portfolio & Featured Projects
-Background, philosophy & approach       Wonders Scents, Freecom & Maison Étoile
-
-Technical Skills & Stack                Direct Contact & Book A Call
-React, TypeScript, Tailwind & APIs      Instant WhatsApp routing & schedule a call
-```
-
-### ✨ Search & AI Engine Optimization (GEO / AEO)
-- **JSON-LD Schema Markup**: Integrated Schema.org `Person`, `WebSite`, `ProfessionalService`, `AggregateRating`, and `ItemList` schemas.
-- **AI Search Discoverability**: Optimized semantic structure for AI answers (ChatGPT Search, Perplexity, Google Gemini Overviews) with explicit entity identification.
-- **Social Graph Open Graph & Twitter Cards**: High-resolution branded cards with the official IDOWU logo for link sharing across WhatsApp, LinkedIn, and Twitter.
+Key engineering highlights:
+- **Performance & Modern Tooling**: Built with React 19, TypeScript, and Vite for fast compilation, minimal bundle footprints, and high Lighthouse scores.
+- **Fluid Motion & Interaction Design**: Smooth page and component transitions powered by Framer Motion and Lenis momentum scrolling.
+- **Search & AI Discoverability**: Comprehensive Schema.org JSON-LD structured data and semantic markup optimized for search engines and AI answer engines.
 
 ---
 
-## 🚀 Featured Client Projects & Case Studies
+## Featured Projects
 
-| Project | Domain | Technologies | Live Platform |
+| Project | Industry / Domain | Tech Stack | Deployment |
 | :--- | :--- | :--- | :--- |
-| **Wonders Scents** | Luxury E-Commerce | React 19, TypeScript, Vite, Tailwind CSS, Embla Carousel | [Live Website](https://wondersscents.vercel.app) |
-| **Freecom Technologies** | Gadget Retail & Repair Booking | React (JSX), JavaScript, Tailwind CSS, EmailJS | [Live Website](https://freecom-technologies.vercel.app) |
-| **Maison Étoile** | Fine Dining & Table Reservations | React 19, TypeScript, Vite, Zustand, Framer Motion | [Live Website](https://maison-etoile-three.vercel.app) |
+| **Wonders Scents** | Luxury E-Commerce | React 19, TypeScript, Vite, Tailwind CSS, Embla Carousel | [Live Preview](https://wondersscents.vercel.app/) |
+| **Freecom Technologies** | Retail & Hardware Services | React, JavaScript, Tailwind CSS, EmailJS | [Live Preview](https://freecom-technologies.vercel.app/) |
+| **Maison Étoile** | Hospitality & Table Reservations | React 19, TypeScript, Vite, Zustand, Framer Motion | [Live Preview](https://maison-etoile-three.vercel.app/) |
 
 ---
 
-## 🛠️ Architecture & Core Technologies
+## Core Technologies
 
-- **Frontend Core**: React 19, TypeScript, Vite 8
-- **Styling**: Tailwind CSS v4 with custom theme tokens & CSS variables
-- **Motion & Interactions**: Framer Motion for stagger animations and page transitions
-- **Smooth Momentum Scrolling**: Lenis (`lerp: 0.08`) for fluid, effortless momentum glide
-- **Interactive Canvas**: Custom particle background (`DotField`) with cursor repulsion
-- **Iconography**: Lucide React & React Icons
-- **Communications**: Integrated WhatsApp routing & EmailJS
+### Frontend & Architecture
+- **React 19 & TypeScript**: Component-driven architecture with strict type safety and modular structure.
+- **Vite 8**: Next-generation frontend build tooling and optimized production assets.
+- **Zustand**: Lightweight, predictable state management.
+
+### UI, Motion & Canvas
+- **Tailwind CSS v4**: Utility-first CSS framework configured with semantic tokens and CSS variables.
+- **Framer Motion**: Declarative animations, layout transitions, and scroll-linked triggers.
+- **Lenis**: Hardware-accelerated smooth scrolling integration.
+- **HTML5 Canvas**: Custom particle system (`DotField`) with interactive mouse repulsion.
+
+### SEO, AEO & Metadata
+- **Structured Data (JSON-LD)**: Schema.org entity definitions including `Person`, `WebSite`, `ProfessionalService`, `AggregateRating`, and `ItemList`.
+- **Social Graph Optimization**: Open Graph and Twitter Cards for high-fidelity link unfurling across platforms.
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```text
 my-portfolio/
 ├── public/
-│   ├── idowu-logo-dark.png     # Official dark logo emblem
-│   ├── idowu-logo-light.png    # Official crisp white emblem
-│   ├── favicon.ico             # Tab favicon (IDOWU logo)
-│   ├── favicon-32x32.png       # High-DPI browser icon
-│   ├── apple-touch-icon.png    # Apple iOS icon
-│   └── projects/               # Client project previews
+│   ├── idowu-logo-dark.png        # Dark theme brand asset
+│   ├── idowu-logo-light.png       # Light theme brand asset
+│   ├── favicon.ico                # Web favicon
+│   ├── favicon-32x32.png          # High-resolution browser icon
+│   ├── apple-touch-icon.png       # iOS touch icon
+│   └── projects/                  # Client project imagery & previews
 ├── src/
 │   ├── components/
-│   │   ├── common/             # Logo, Button, DotField
-│   │   ├── layout/             # Navbar, Footer, SmoothScroll, Layout
-│   │   └── sections/           # Hero, About, Skills, Projects, Contact
+│   │   ├── common/                # Reusable UI primitives (Button, Logo, Canvas)
+│   │   ├── layout/                # Structural wrappers (Navbar, Footer, SmoothScroll)
+│   │   └── sections/              # Page sections (Hero, About, Projects, Skills, Contact)
 │   ├── data/
-│   │   └── projectsData.ts     # Deep case study architecture data
+│   │   └── projectsData.ts        # Project metadata, specs, and case studies
 │   ├── hooks/
-│   │   └── useAnimationProfile.ts # Adaptive fluid animation timings
+│   │   └── useAnimationProfile.ts # Responsive animation configuration hook
 │   ├── pages/
-│   │   ├── Home.tsx            # Full landing page layout
-│   │   └── ProjectDetail.tsx   # Detailed individual case study page
-│   ├── App.tsx                 # Clean route definitions
-│   ├── main.tsx                # Application root entry
-│   └── index.css               # Design system & Lenis scroll directives
+│   │   ├── Home.tsx               # Main landing page
+│   │   └── ProjectDetail.tsx      # Case study deep-dive page
+│   ├── App.tsx                    # Root application router
+│   ├── main.tsx                   # DOM mount entry point
+│   └── index.css                  # Global stylesheet and token definitions
 ├── package.json
 └── README.md
 ```
 
 ---
 
-## ⚡ Quick Start & Development
+## Getting Started
 
-1. **Clone or navigate to the repository**:
+### Prerequisites
+- Node.js (v18 or higher recommended)
+- npm, yarn, or pnpm
+
+### Installation & Local Setup
+
+1. **Clone the repository:**
    ```bash
+   git clone https://github.com/steptem17/my-portfolio.git
    cd my-portfolio
    ```
 
-2. **Install dependencies**:
+2. **Install dependencies:**
    ```bash
    npm install
    ```
 
-3. **Start local development server**:
+3. **Start the development server:**
    ```bash
    npm run dev
    ```
-   Open `http://localhost:5173` in your browser.
+   Navigate to `http://localhost:5173` in your browser.
 
-4. **Production Build & Verification**:
+4. **Build for production:**
    ```bash
    npm run build
    ```
 
+5. **Preview production build:**
+   ```bash
+   npm run preview
+   ```
+
 ---
 
-## 📬 Contact & Connect
+## Search & Discovery Preview
 
-- **Direct Email**: [steptem17@gmail.com](mailto:steptem17@gmail.com)
+The application implements structured data (JSON-LD) to deliver accurate, rich SERP presentation on search engines:
+
+```text
+Stephen Idowu | Web Developer & Frontend Specialist
+https://stephenidowu.dev
+Stephen Idowu is a Web Developer crafting high-performance, responsive web applications 
+with React, TypeScript, and modern UI architectures. Explore selected client projects.
+Rating: 5.0 ★★★★★ (18 reviews)
+
+• About Stephen Idowu          • Featured Projects
+• Technical Stack              • Contact & Availability
+```
+
+---
+
+## Contact
+
+- **Email**: [steptem17@gmail.com](mailto:steptem17@gmail.com)
 - **WhatsApp**: [+234 810 338 3243](https://wa.me/2348103383243)
 - **LinkedIn**: [Stephen Idowu](https://www.linkedin.com/in/stephen-idowu-b1b591246/)
 - **GitHub**: [@steptem17](https://github.com/steptem17)
@@ -134,5 +159,5 @@ my-portfolio/
 ---
 
 <div align="center">
-  <sub>&copy; 2026 Stephen Idowu. All rights reserved. Designed & Engineered with precision.</sub>
+  <sub>&copy; 2026 Stephen Idowu. All rights reserved.</sub>
 </div>
