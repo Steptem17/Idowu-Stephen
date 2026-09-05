@@ -48,8 +48,8 @@ const Navbar = () => {
 
     const target = e?.currentTarget as HTMLElement | undefined
     const rect = target?.getBoundingClientRect?.()
-    const x = e?.clientX && e.clientX > 0 ? e.clientX : rect ? rect.left + rect.width / 2 : window.innerWidth - 80
-    const y = e?.clientY && e.clientY > 0 ? e.clientY : rect ? rect.top + rect.height / 2 : 40
+    const x = rect ? rect.left + rect.width / 2 : (e?.clientX && e.clientX > 0 ? e.clientX : window.innerWidth / 2)
+    const y = rect ? rect.top + rect.height / 2 : (e?.clientY && e.clientY > 0 ? e.clientY : 40)
     const endRadius = Math.hypot(
       Math.max(x, window.innerWidth - x),
       Math.max(y, window.innerHeight - y)
@@ -280,7 +280,7 @@ const Navbar = () => {
               type="button"
               onClick={toggleTheme}
               aria-label="Toggle theme"
-              className="w-9 h-9 text-zinc-700 dark:text-slate-300 flex items-center justify-center rounded-lg cursor-pointer active:scale-95"
+              className="w-9 h-9 text-zinc-700 dark:text-slate-300 hover:text-zinc-950 dark:hover:text-white transition-colors flex items-center justify-center rounded-lg cursor-pointer"
             >
               {isDark ? <Sun size={18} /> : <Moon size={18} />}
             </button>
@@ -344,7 +344,7 @@ const Navbar = () => {
                   type="button"
                   onClick={toggleTheme}
                   aria-label="Toggle theme"
-                  className="w-9 h-9 text-zinc-700 dark:text-slate-300 flex items-center justify-center rounded-lg cursor-pointer active:scale-95"
+                  className="w-9 h-9 text-zinc-700 dark:text-slate-300 hover:text-zinc-950 dark:hover:text-white transition-colors flex items-center justify-center rounded-lg cursor-pointer"
                 >
                   {isDark ? <Sun size={18} /> : <Moon size={18} />}
                 </button>
