@@ -1,15 +1,11 @@
-import { motion, AnimatePresence, useInView } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useRef, useState } from 'react'
 import emailjs from '@emailjs/browser'
 import { FaLinkedin, FaGithub, FaWhatsapp } from 'react-icons/fa'
 import { Mail, Check, ShieldCheck, X } from 'lucide-react'
-import { useAnimationProfile } from '../../hooks/useAnimationProfile'
 
 const Contact = () => {
-  const ref = useRef(null)
   const formRef = useRef<HTMLFormElement>(null)
-  const isInView = useInView(ref, { once: true, amount: 0.2 })
-  const anim = useAnimationProfile()
 
   const [formData, setFormData] = useState({
     firstName: '',
@@ -87,9 +83,10 @@ const Contact = () => {
         
         {/* Section Header */}
         <motion.div 
-          initial={{ opacity: 0, y: 25 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: anim.duration(0.85), ease: anim.ease }}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
           className="mb-12 sm:mb-16"
         >
           <span className="text-xs font-semibold tracking-wider text-zinc-500 dark:text-slate-400 uppercase font-mono block mb-3">
@@ -100,13 +97,14 @@ const Contact = () => {
           </h2>
         </motion.div>
 
-        <div ref={ref} className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
           
           {/* Left Column: Direct Contact & Details */}
           <motion.div 
-            initial={{ opacity: 0, x: -35 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: anim.duration(0.95), ease: anim.ease }}
+            initial={{ opacity: 0, x: -30, y: 16 }}
+            whileInView={{ opacity: 1, x: 0, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-5 flex flex-col space-y-8"
           >
             <p className="text-base sm:text-lg text-zinc-600 dark:text-slate-300 font-normal leading-relaxed max-w-md">
@@ -201,9 +199,10 @@ const Contact = () => {
 
           {/* Right Column: Form */}
           <motion.div 
-            initial={{ opacity: 0, x: 35 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: anim.duration(0.95), delay: anim.delay(0.15), ease: anim.ease }}
+            initial={{ opacity: 0, x: 30, y: 16 }}
+            whileInView={{ opacity: 1, x: 0, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-7 flex flex-col justify-start"
           >
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-8">

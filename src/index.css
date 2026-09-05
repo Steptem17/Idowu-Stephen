@@ -132,7 +132,7 @@ html.lenis, html.lenis body {
   overflow: hidden;
 }
 
-/* View Transition Theme Ripple Reveal (rbp-portfolio style) */
+/* View Transition Theme Ripple Reveal */
 ::view-transition-old(root),
 ::view-transition-new(root) {
   animation: none;

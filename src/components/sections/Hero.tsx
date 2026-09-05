@@ -4,22 +4,20 @@ import { ArrowDown, ArrowUpRight, Mail } from 'lucide-react'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import profileImage from '../../assets/images/my-profile.jpeg'
 import StaggeredText from '../common/StaggeredText'
-import { useAnimationProfile } from '../../hooks/useAnimationProfile'
 
 const Hero = () => {
   const ref = useRef<HTMLDivElement>(null)
-  const anim = useAnimationProfile()
 
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] })
   const imageY = useTransform(scrollYProgress, [0, 1], ['0%', '10%'])
   const textY = useTransform(scrollYProgress, [0, 1], ['0%', '6%'])
 
   const fadeInUp: Variants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 18 },
     visible: (i: number) => ({
       opacity: 1,
       y: 0,
-      transition: { duration: anim.duration(0.95), delay: anim.delay(i * 0.14), ease: anim.ease }
+      transition: { duration: 0.85, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }
     })
   }
 
@@ -45,12 +43,12 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto px-6 sm:px-10 md:px-14 w-full flex-1 flex flex-col justify-between relative z-10">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center flex-1 my-auto pt-4 lg:pt-8">
 
-          {/* Left Column: Glides smoothly from Left Angle */}
+          {/* Left Column: Glides smoothly from Left Angle on load */}
           <motion.div 
             style={{ y: textY }}
-            initial={{ opacity: 0, x: -45 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: anim.duration(1.1), ease: anim.ease }}
+            initial={{ opacity: 0, x: -35, y: 15 }}
+            animate={{ opacity: 1, x: 0, y: 0 }}
+            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-7 flex flex-col justify-center z-20 py-4 lg:py-6"
           >
             {/* Top Metrics Row */}
@@ -88,14 +86,14 @@ const Hero = () => {
                 animateBy="characters"
                 direction="up"
                 stagger={0.07}
-                delay={0.25}
+                delay={0.2}
                 duration={0.9}
                 className="text-6xl sm:text-8xl md:text-9xl lg:text-[11.5rem] font-normal tracking-tight text-zinc-950 dark:text-white leading-[0.88] select-none font-sans"
               />
               <motion.p 
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: anim.duration(0.85), delay: anim.delay(0.65), ease: anim.ease }}
+                transition={{ duration: 0.85, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
                 className="text-base sm:text-lg md:text-xl lg:text-2xl text-zinc-700 dark:text-slate-200 font-medium mt-6 flex items-center gap-2.5 font-sans"
               >
                 <span className="text-zinc-400 dark:text-slate-500">—</span>
@@ -152,12 +150,12 @@ const Hero = () => {
             </motion.div>
           </motion.div>
 
-          {/* Right Column: Glides smoothly from Right Angle */}
+          {/* Right Column: Glides smoothly from Right Angle on load */}
           <motion.div 
             style={{ y: imageY }}
-            initial={{ opacity: 0, x: 50, scale: 0.96 }}
-            animate={{ opacity: 1, x: 0, scale: 1 }}
-            transition={{ duration: anim.duration(1.2), delay: anim.delay(0.25), ease: anim.ease }}
+            initial={{ opacity: 0, x: 35, y: 15, scale: 0.98 }}
+            animate={{ opacity: 1, x: 0, y: 0, scale: 1 }}
+            transition={{ duration: 0.95, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-5 relative flex items-center justify-center lg:justify-end z-10 mt-6 lg:mt-0"
           >
             <div className="relative w-full max-w-[300px] sm:max-w-[360px] md:max-w-[420px] lg:max-w-[460px] aspect-[4/5] rounded-3xl overflow-hidden bg-zinc-100 dark:bg-slate-800/60 border border-zinc-200/80 dark:border-slate-700 p-2.5 sm:p-3">

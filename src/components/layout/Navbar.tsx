@@ -40,15 +40,16 @@ const Navbar = () => {
     const doc = document as unknown as DocWithTransition
     if (
       !doc.startViewTransition ||
-      !e ||
       window.matchMedia('(prefers-reduced-motion: reduce)').matches
     ) {
       applyTheme()
       return
     }
 
-    const x = e.clientX
-    const y = e.clientY
+    const target = e?.currentTarget as HTMLElement | undefined
+    const rect = target?.getBoundingClientRect?.()
+    const x = e?.clientX && e.clientX > 0 ? e.clientX : rect ? rect.left + rect.width / 2 : window.innerWidth - 80
+    const y = e?.clientY && e.clientY > 0 ? e.clientY : rect ? rect.top + rect.height / 2 : 40
     const endRadius = Math.hypot(
       Math.max(x, window.innerWidth - x),
       Math.max(y, window.innerHeight - y)
@@ -67,8 +68,8 @@ const Navbar = () => {
           ],
         },
         {
-          duration: 550,
-          easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
+          duration: 500,
+          easing: 'ease-in-out',
           pseudoElement: '::view-transition-new(root)',
         }
       )

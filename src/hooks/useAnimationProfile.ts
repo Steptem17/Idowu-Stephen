@@ -4,7 +4,7 @@ export const useAnimationProfile = () => {
     duration: (initial: number) => initial,
     delay: (initial: number) => initial,
     stagger: (initial: number) => initial,
-    ease: [0.22, 1, 0.36, 1] as const,
+    ease: [0.16, 1, 0.3, 1] as const,
   }
 }
 

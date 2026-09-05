@@ -1,54 +1,9 @@
-import { motion, useInView, type Variants } from 'framer-motion'
-import { useRef } from 'react'
+import { motion } from 'framer-motion'
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaGitAlt } from 'react-icons/fa'
 import { SiTypescript, SiTailwindcss, SiNextdotjs } from 'react-icons/si'
 import { Code2, Layers, Cpu, Wrench, CheckCircle2 } from 'lucide-react'
-import { useAnimationProfile } from '../../hooks/useAnimationProfile'
 
 const Skills = () => {
-  const ref = useRef<HTMLDivElement>(null)
-  const isInView = useInView(ref, { once: true, amount: 0.15 })
-  const anim = useAnimationProfile()
-
-  const containerVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: anim.stagger(0.1),
-        delayChildren: anim.delay(0.1),
-      },
-    },
-  }
-
-  const fromLeftVariants: Variants = {
-    hidden: { opacity: 0, x: -40 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: anim.duration(0.95), ease: anim.ease },
-    },
-  }
-
-  const fromRightVariants: Variants = {
-    hidden: { opacity: 0, x: 40 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: anim.duration(0.95), ease: anim.ease },
-    },
-  }
-
-  const cardScaleVariants: Variants = {
-    hidden: { opacity: 0, y: 30, scale: 0.96 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: { duration: anim.duration(0.85), ease: anim.ease },
-    },
-  }
-
   // Primary languages & tools with official brand icons
   const primaryTechnologies = [
     { name: 'HTML5', category: 'Markup & Structure', icon: <FaHtml5 className="text-[#E34F26]" size={24} /> },
@@ -123,106 +78,128 @@ const Skills = () => {
       className="relative overflow-hidden bg-white dark:bg-transparent text-zinc-950 dark:text-white py-24 sm:py-32 lg:py-36 border-t border-zinc-200/80 dark:border-white/50 font-sans"
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-10 md:px-14">
-        <div ref={ref}>
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate={isInView ? 'visible' : 'hidden'}
-            className="space-y-24 sm:space-y-28"
-          >
-            {/* Top: Section Header & Core Technologies */}
-            <div className="space-y-12 sm:space-y-14">
-              <motion.div variants={fromLeftVariants} className="max-w-4xl">
-                <span className="text-xs font-semibold tracking-wider text-zinc-500 dark:text-slate-400 uppercase font-mono block mb-3">
-                  Technical Expertise &amp; Skills
-                </span>
-                <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-normal tracking-tight text-zinc-950 dark:text-white leading-[1.2]">
-                  Modern tools and languages leveraged to build high-performance web products.
-                </h2>
-              </motion.div>
+        <div className="space-y-24 sm:space-y-28">
+          
+          {/* Top: Section Header & Core Technologies */}
+          <div className="space-y-12 sm:space-y-14">
+            <motion.div 
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+              className="max-w-4xl"
+            >
+              <span className="text-xs font-semibold tracking-wider text-zinc-500 dark:text-slate-400 uppercase font-mono block mb-3">
+                Technical Expertise &amp; Skills
+              </span>
+              <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-normal tracking-tight text-zinc-950 dark:text-white leading-[1.2]">
+                Modern tools and languages leveraged to build high-performance web products.
+              </h2>
+            </motion.div>
 
-              {/* 1. Primary Technologies & Tools Grid with Brand Icons */}
-              <div className="space-y-8 pt-2">
-                <motion.div variants={fromLeftVariants} className="border-b border-zinc-200 dark:border-slate-800 pb-4">
-                  <h3 className="text-xl sm:text-2xl font-normal text-zinc-950 dark:text-white tracking-tight">
-                    Core Technologies & Languages
-                  </h3>
-                </motion.div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                  {primaryTechnologies.map((tech, idx) => (
-                    <motion.div
-                      key={idx}
-                      variants={cardScaleVariants}
-                      className="p-5 sm:p-6 rounded-2xl bg-zinc-50/70 dark:bg-slate-800/40 border border-zinc-200/80 dark:border-slate-800 hover:border-zinc-400 dark:hover:border-slate-600 transition-all duration-200 flex items-center gap-4 group"
-                    >
-                      <div className="w-12 h-12 rounded-xl bg-white dark:bg-slate-800 border border-zinc-200/60 dark:border-slate-700 flex items-center justify-center shrink-0 shadow-2xs group-hover:scale-110 transition-transform">
-                        {tech.icon}
-                      </div>
-                      <div>
-                        <h4 className="text-base sm:text-lg font-medium text-zinc-950 dark:text-white">
-                          {tech.name}
-                        </h4>
-                        <span className="text-xs sm:text-sm text-zinc-500 dark:text-slate-400 block mt-0.5">
-                          {tech.category}
-                        </span>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* 2. Skill Group Categories - 2 Columns for Spacious Layout */}
-            <div className="space-y-8">
-              <motion.div variants={fromLeftVariants} className="border-b border-zinc-200 dark:border-slate-800 pb-4">
+            {/* 1. Primary Technologies & Tools Grid with Brand Icons */}
+            <div className="space-y-8 pt-2">
+              <motion.div 
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+                className="border-b border-zinc-200 dark:border-slate-800 pb-4"
+              >
                 <h3 className="text-xl sm:text-2xl font-normal text-zinc-950 dark:text-white tracking-tight">
-                  Detailed Domain Knowledge
+                  Core Technologies & Languages
                 </h3>
               </motion.div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
-                {skillGroups.map((group, idx) => (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                {primaryTechnologies.map((tech, idx) => (
                   <motion.div
                     key={idx}
-                    variants={idx % 2 === 0 ? fromLeftVariants : fromRightVariants}
-                    className="p-7 sm:p-9 rounded-2xl bg-zinc-50/70 dark:bg-slate-800/40 border border-zinc-200/80 dark:border-slate-800 hover:border-zinc-400 dark:hover:border-slate-600 transition-all flex flex-col justify-between"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-40px" }}
+                    transition={{ duration: 0.8, delay: (idx % 3) * 0.08, ease: [0.16, 1, 0.3, 1] }}
+                    className="p-5 sm:p-6 rounded-2xl bg-zinc-50/70 dark:bg-slate-800/40 border border-zinc-200/80 dark:border-slate-800 hover:border-zinc-400 dark:hover:border-slate-600 transition-colors duration-200 flex items-center gap-4 group"
                   >
-                    <div className="space-y-6">
-                      <div className="flex items-start gap-4">
-                        <div className="w-12 h-12 rounded-xl bg-white dark:bg-slate-800 border border-zinc-200 dark:border-slate-700 flex items-center justify-center text-zinc-900 dark:text-white shrink-0 shadow-2xs">
-                          {group.icon}
-                        </div>
-                        <div className="space-y-1">
-                          <h4 className="text-xl sm:text-2xl font-medium text-zinc-950 dark:text-white tracking-tight">
-                            {group.title}
-                          </h4>
-                          <p className="text-xs sm:text-sm text-zinc-500 dark:text-slate-400 leading-relaxed font-normal">
-                            {group.description}
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="pt-4 border-t border-zinc-200/60 dark:border-slate-700/60">
-                        <ul className="space-y-3">
-                          {group.items.map((item, itemIdx) => (
-                            <li
-                              key={itemIdx}
-                              className="text-sm sm:text-base text-zinc-800 dark:text-slate-200 flex items-center gap-3 font-normal"
-                            >
-                              <CheckCircle2 size={16} className="text-zinc-950 dark:text-white shrink-0" />
-                              <span>{item}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
+                    <div className="w-12 h-12 rounded-xl bg-white dark:bg-slate-800 border border-zinc-200/60 dark:border-slate-700 flex items-center justify-center shrink-0 shadow-2xs group-hover:scale-110 transition-transform">
+                      {tech.icon}
+                    </div>
+                    <div>
+                      <h4 className="text-base sm:text-lg font-medium text-zinc-950 dark:text-white">
+                        {tech.name}
+                      </h4>
+                      <span className="text-xs sm:text-sm text-zinc-500 dark:text-slate-400 block mt-0.5">
+                        {tech.category}
+                      </span>
                     </div>
                   </motion.div>
                 ))}
               </div>
             </div>
+          </div>
 
-          </motion.div>
+          {/* 2. Skill Group Categories - 2 Columns for Spacious Layout */}
+          <div className="space-y-8">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="border-b border-zinc-200 dark:border-slate-800 pb-4"
+            >
+              <h3 className="text-xl sm:text-2xl font-normal text-zinc-950 dark:text-white tracking-tight">
+                Detailed Domain Knowledge
+              </h3>
+            </motion.div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+              {skillGroups.map((group, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={
+                    idx % 2 === 0
+                      ? { opacity: 0, x: -30, y: 16 }
+                      : { opacity: 0, x: 30, y: 16 }
+                  }
+                  whileInView={{ opacity: 1, x: 0, y: 0 }}
+                  viewport={{ once: true, margin: "-40px" }}
+                  transition={{ duration: 0.9, delay: (idx % 2) * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                  className="p-7 sm:p-9 rounded-2xl bg-zinc-50/70 dark:bg-slate-800/40 border border-zinc-200/80 dark:border-slate-800 hover:border-zinc-400 dark:hover:border-slate-600 transition-colors duration-200 flex flex-col justify-between"
+                >
+                  <div className="space-y-6">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 rounded-xl bg-white dark:bg-slate-800 border border-zinc-200 dark:border-slate-700 flex items-center justify-center text-zinc-900 dark:text-white shrink-0 shadow-2xs">
+                        {group.icon}
+                      </div>
+                      <div className="space-y-1">
+                        <h4 className="text-xl sm:text-2xl font-medium text-zinc-950 dark:text-white tracking-tight">
+                          {group.title}
+                        </h4>
+                        <p className="text-xs sm:text-sm text-zinc-500 dark:text-slate-400 leading-relaxed font-normal">
+                          {group.description}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="pt-4 border-t border-zinc-200/60 dark:border-slate-700/60">
+                      <ul className="space-y-3">
+                        {group.items.map((item, itemIdx) => (
+                          <li
+                            key={itemIdx}
+                            className="text-sm sm:text-base text-zinc-800 dark:text-slate-200 flex items-center gap-3 font-normal"
+                          >
+                            <CheckCircle2 size={16} className="text-zinc-950 dark:text-white shrink-0" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

@@ -1,53 +1,11 @@
-import { motion, useInView, type Variants } from 'framer-motion'
-import { useRef } from 'react'
+import { motion } from 'framer-motion'
 import { ArrowUpRight } from 'lucide-react'
 import { FaGithub } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
 import { projectsData } from '../../data/projectsData'
-import { useAnimationProfile } from '../../hooks/useAnimationProfile'
 
 const Projects = () => {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.08 })
   const navigate = useNavigate()
-  const anim = useAnimationProfile()
-
-  const containerVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: anim.stagger(0.1), delayChildren: anim.delay(0.1) },
-    },
-  }
-
-  const fromLeftVariants: Variants = {
-    hidden: { opacity: 0, x: -40, y: 15 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      y: 0,
-      transition: { duration: anim.duration(0.95), ease: anim.ease },
-    },
-  }
-
-  const fromRightVariants: Variants = {
-    hidden: { opacity: 0, x: 40, y: 15 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      y: 0,
-      transition: { duration: anim.duration(0.95), ease: anim.ease },
-    },
-  }
-
-  const fromBottomVariants: Variants = {
-    hidden: { opacity: 0, y: 40 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: anim.duration(1.0), ease: anim.ease },
-    },
-  }
 
   return (
     <section
@@ -59,9 +17,10 @@ const Projects = () => {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-14 gap-6">
           <motion.div 
-            initial={{ opacity: 0, x: -35 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.95, ease: [0.22, 1, 0.36, 1] }}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
             className="max-w-4xl"
           >
             <span className="text-xs font-semibold tracking-wider text-zinc-500 dark:text-slate-400 uppercase font-mono block mb-3">
@@ -74,17 +33,23 @@ const Projects = () => {
         </div>
 
         {/* Projects Grid: 2 on Top, 1 Centered Below */}
-        <motion.div
-          ref={ref}
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? 'visible' : 'hidden'}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
           {projectsData.map((project, index) => (
             <motion.div
               key={project.id}
-              variants={index === 0 ? fromLeftVariants : index === 1 ? fromRightVariants : fromBottomVariants}
+              initial={
+                index === 0
+                  ? { opacity: 0, x: -32, y: 18 }
+                  : index === 1
+                  ? { opacity: 0, x: 32, y: 18 }
+                  : { opacity: 0, y: 32 }
+              }
+              whileInView={{ opacity: 1, x: 0, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ 
+                duration: 0.9, 
+                ease: [0.16, 1, 0.3, 1] 
+              }}
               onClick={() => {
                 sessionStorage.setItem('portfolio_return_to_projects_y', String(window.scrollY))
                 sessionStorage.setItem('portfolio_return_from_project', 'true')
@@ -92,7 +57,7 @@ const Projects = () => {
                 sessionStorage.setItem('portfolio_return_section', 'projects')
                 navigate(`/project/${project.id}`)
               }}
-              className={`rounded-2xl sm:rounded-3xl bg-zinc-50 dark:bg-slate-800/40 border border-zinc-200 dark:border-slate-700/70 overflow-hidden group hover:border-zinc-400 dark:hover:border-slate-500 transition-all duration-300 flex flex-col justify-between cursor-pointer ${
+              className={`rounded-2xl sm:rounded-3xl bg-zinc-50 dark:bg-slate-800/40 border border-zinc-200 dark:border-slate-700/70 overflow-hidden group hover:border-zinc-400 dark:hover:border-slate-500 transition-colors duration-300 flex flex-col justify-between cursor-pointer ${
                 index === 2 ? 'md:col-span-2 md:w-[calc(50%-1rem)] lg:w-[calc(50%-1.25rem)] md:mx-auto' : ''
               }`}
             >
@@ -137,7 +102,7 @@ const Projects = () => {
 
             </motion.div>
           ))}
-        </motion.div>
+        </div>
 
         {/* Bottom GitHub Callout: Refined font sizes and mobile responsive layout */}
         <div className="mt-10 sm:mt-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 sm:gap-6">
