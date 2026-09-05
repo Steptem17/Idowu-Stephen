@@ -50,7 +50,7 @@ Key engineering highlights:
 ## Project Structure
 
 ```text
-my-portfolio/
+Idowu-Stephen/
 ├── public/
 │   ├── brand/
 │   │   ├── idowu-logo-dark.png    # Dark theme brand asset
@@ -92,8 +92,8 @@ my-portfolio/
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/steptem17/my-portfolio.git
-   cd my-portfolio
+   git clone https://github.com/Steptem17/Idowu-Stephen.git
+   cd Idowu-Stephen
    ```
 
 2. **Install dependencies:**
