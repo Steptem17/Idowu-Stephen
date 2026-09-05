@@ -256,10 +256,10 @@ const Experience = () => {
             >
               <h4 className="font-display font-bold text-lg mb-2">Full Resume Available</h4>
               <p className="text-sm text-zinc-650 dark:text-zinc-400 mb-4">
-                Download my complete CV with detailed project history and references.
+                Download my complete resume with detailed project history and references.
               </p>
               <a
-                href="/CV.pdf"
+                href="/Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-zinc-950 dark:text-white border-b border-zinc-950 dark:border-white font-medium hover:gap-3 transition-all text-sm"

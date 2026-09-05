@@ -60,7 +60,7 @@ my-portfolio/
 │   │   ├── favicon-32x32.png      # High-resolution browser icon
 │   │   └── apple-touch-icon.png   # iOS touch icon
 │   ├── projects/                  # Client project imagery & previews
-│   └── CV.pdf                     # Curriculum Vitae
+│   └── Resume.pdf                 # Professional Resume
 ├── src/
 │   ├── components/
 │   │   ├── common/                # Reusable UI primitives (Button, Logo, Canvas)

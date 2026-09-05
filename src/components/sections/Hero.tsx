@@ -117,7 +117,7 @@ const Hero = () => {
                 <ArrowUpRight size={16} />
               </a>
               <a
-                href="/CV.pdf"
+                href="/Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-7 py-3.5 sm:px-8 sm:py-4 rounded-xl border border-zinc-200 dark:border-slate-700 text-zinc-900 dark:text-slate-100 text-sm font-semibold tracking-wide hover:border-zinc-950 dark:hover:border-white hover:bg-zinc-50 dark:hover:bg-slate-800 transition-colors cursor-pointer font-sans"
